@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-dm-sans: "DM Sans", sans-serif;
+  --navy: #0B1E3D;
+  --ocean: #1E5FAD;
+  --teal: #0D9488;
+  --gold: #F59E0B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-slate-900 antialiased;
+    background-color: #F8FAFC;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .btn-hero {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-heading font-semibold text-lg text-white shadow-ocean transition-all duration-300;
+    background: linear-gradient(135deg, #1E5FAD 0%, #0D9488 100%);
+  }
+
+  .btn-hero:hover {
+    @apply scale-105;
+    box-shadow: 0 8px 32px rgba(30, 95, 173, 0.4);
+  }
+
+  .btn-ocean {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-heading font-semibold text-white transition-all duration-200;
+    background: linear-gradient(135deg, #1E5FAD 0%, #1749A0 100%);
+  }
+
+  .btn-ocean:hover {
+    @apply scale-[1.02];
+    box-shadow: 0 4px 20px rgba(30, 95, 173, 0.35);
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-heading font-semibold text-white transition-all duration-200;
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  }
+
+  .btn-gold:hover {
+    @apply scale-[1.02];
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+  }
+
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-sm border border-white/40 rounded-2xl shadow-card;
+  }
+
+  .stat-card {
+    @apply bg-white rounded-2xl p-6 shadow-card border border-slate-100 hover:shadow-card-hover transition-shadow duration-300;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 font-medium transition-all duration-200 hover:bg-ocean/5 hover:text-ocean;
+  }
+
+  .nav-link.active {
+    @apply bg-ocean/10 text-ocean font-semibold;
+  }
+
+  .section-title {
+    @apply font-heading font-bold text-navy;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #1E5FAD 0%, #0D9488 100%);
+  }
+
+  .badge-status-pending {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gold/10 text-gold-600;
+  }
+
+  .badge-status-inprogress {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-ocean/10 text-ocean;
+  }
+
+  .badge-status-completed {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-teal/10 text-teal;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 font-body text-sm placeholder-slate-400 transition-all duration-200 focus:outline-none focus:border-ocean focus:ring-2 focus:ring-ocean/20;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
